@@ -25,12 +25,12 @@ export default function Login({ route: { params } }) {
     },
   });
   const passwordRef = useRef();
-  const onCompleted = async(data) => {
+  const onCompleted = async (data) => {
     const {
       login: { ok, token },
     } = data;
     if (ok) {
-      logUserIn(token)
+      await logUserIn(token);
     }
   };
   const [logInMutation, { loading }] = useMutation(LOGIN_MUTATION, {

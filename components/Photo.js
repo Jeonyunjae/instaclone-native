@@ -97,8 +97,8 @@ function Photo({ id, user, caption, file, isLiked, likes }) {
   });
   const goToProfile = () => {
     navigation.navigate("Profile", {
-      userName: user.userName,
       userId: user.userId,
+      id: user.userN,
     });
   };
   return (
@@ -139,7 +139,7 @@ function Photo({ id, user, caption, file, isLiked, likes }) {
         </TouchableOpacity>
         <Caption>
           <TouchableOpacity onPress={goToProfile}>
-            <Username>{user.username}</Username>
+            <Username>{user.userId}</Username>
           </TouchableOpacity>
           <CaptionText>{caption}</CaptionText>
         </Caption>

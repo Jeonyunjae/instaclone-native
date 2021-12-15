@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Text, View } from "react-native";
 
-export default function Profile() {
+export default function Profile({ navigation, route }) {
+  useEffect(() => {
+    if (route?.params?.userId) {
+      navigation.setOptions({
+        title: route.params.userId,
+      });
+    }
+  }, []);
   return (
     <View
       style={{
@@ -11,7 +18,7 @@ export default function Profile() {
         justifyContent: "center",
       }}
     >
-      <Text style={{ color: "white" }}>Someone Profile</Text>
+      <Text style={{ color: "white" }}>Someones Profile</Text>
     </View>
   );
 }
