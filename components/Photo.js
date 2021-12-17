@@ -97,8 +97,8 @@ function Photo({ id, user, caption, file, isLiked, likes }) {
   });
   const goToProfile = () => {
     navigation.navigate("Profile", {
+      userName: user.userName,
       userId: user.userId,
-      id: user.userN,
     });
   };
   return (
@@ -158,6 +158,6 @@ Photo.propTypes = {
   file: PropTypes.string.isRequired,
   isLiked: PropTypes.bool.isRequired,
   likes: PropTypes.number.isRequired,
-  commentNumber: PropTypes.number.isRequired,
+  commentNumber: PropTypes.number,
 };
 export default Photo;
